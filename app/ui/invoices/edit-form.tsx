@@ -50,7 +50,7 @@ export default function EditInvoiceForm({
             <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
           {state.errors?.customerId && state.errors?.customerId.map((error: string) => (
-            <div className="text-sm text-red-500 mt-2" id="customer-error">
+            <div className="text-sm text-red-500 mt-2" id="customer-error" key={error}>
               {error}
             </div>
           ))}
@@ -76,7 +76,7 @@ export default function EditInvoiceForm({
               <CurrencyDollarIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
             {state.errors?.amount && state.errors?.amount.map((error: string) => (
-              <div id='amount-error' className="mt-2 text-sm text-red-500">
+              <div id='amount-error' className="mt-2 text-sm text-red-500" key={error}>
                 {error}
               </div>
             ))}
@@ -125,7 +125,7 @@ export default function EditInvoiceForm({
               </div>
             </div>
             {state.errors?.status && state.errors?.status.map((error: string) => (
-              <div className="text-sm mt-2 text-red-500" id="status-error">
+              <div className="text-sm mt-2 text-red-500" id="status-error" key={error}>
                 {error}
               </div>
             ))}
